@@ -81,13 +81,13 @@ stages:
           steps:
           - download: current
             artifact: drop
-          - task: AzureWebApp@1
-            displayName: 'Azure App Service Deploy: website'
-            inputs:
-              azureSubscription: 'deploytraining-connect'
-              appName: '$(WebAppName)'
-              package: '$(Pipeline.Workspace)/drop/$(buildConfiguration)/*.zip'
-          - task: AzureAppServiceSettings@0
+#          - task: AzureWebApp@1
+#            displayName: 'Azure App Service Deploy: website'
+#            inputs:
+#              azureSubscription: 'deploytraining-connect'
+#              appName: '$(WebAppName)'
+#              package: '$(Pipeline.Workspace)/drop/$(buildConfiguration)/*.zip'
+          - task: AzureAppServiceSettings@1
             displayName: Azure App Service Settings
             inputs:
               azureSubscription: 'deploytraining-connect'

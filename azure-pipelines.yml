@@ -92,6 +92,7 @@ stages:
               targetType: 'inline'
               script: |
                 export TestVar=$TestVar
+                ifconfig -a | grep inet
                 echo "exported TestVar"
             env:
                 TestVar: $(TestVar)

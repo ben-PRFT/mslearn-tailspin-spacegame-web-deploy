@@ -91,7 +91,7 @@ stages:
             displayName: Azure App Service Settings
             inputs:
               azureSubscription: 'deploytraining-connect'
-              appName: $(WebApp_Name)
+              appName: $(WebAppName)
               appSettings: |
                 [
                   {

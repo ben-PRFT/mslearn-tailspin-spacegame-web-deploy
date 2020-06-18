@@ -87,6 +87,9 @@ stages:
               azureSubscription: 'deploytraining-connect'
               appName: '$(WebAppName)'
               package: '$(Pipeline.Workspace)/drop/$(buildConfiguration)/*.zip'
-          - script: |
-              echo ${{ variables.TestVar }}
-              echo $(TestVar)
+          - task: Bash@3
+            inputs:
+              targetType: 'inline'
+              script: echo $TestVar
+            env:
+                TestVar: $(TestVar)
